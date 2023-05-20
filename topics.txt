@@ -1,0 +1,134 @@
+Review
+	Ajax
+		load
+		get
+		ajax
+	Web Service
+		RPC
+			SOAP
+			WSDL
+		Rest		
+			OpenAPI / Swagger
+			RAML
+		GraphQL
+	
+	Send Data To Server
+		Form
+			Get
+				Query String
+			Post
+	Sample
+-------------------------------------------------
+	_.$()['a'][1] 
+	
+	Image preloading
+		clone
+		append
+		load
+		
+		Base64
+			33%
+			encode - btoa
+			decode - atob
+	
+	email-campain
+	CSRF - OWASP
+	
+	
+	//error handling
+	//	error event
+	//		broken-image
+	
+	noConflict()
+	
+	Modules
+		Dependency
+		Global variable 
+		Public
+		
+			IIFE
+				Local
+				Dependency Injection
+				Private
+	
+	Module Definition
+		IIFE
+		AMD/UMD
+		CommonJS
+		Ecmascript Module
+		
+		
+	select2
+	
+	jQuery Troubleshooting	
+		not loading jQuery
+		wrong order
+		no css
+		wrong selector/dynamic data
+	
+	
+	jQuery UI
+		interaction
+			draggable()
+			...
+		widgets
+			datepicker
+			...
+			
+	Bootstrap
+		modal
+		data-target
+		data-toggle
+		data-dismiss
+		pros/cons
+		
+	
+	file upload
+		iframe
+		http://jquery.malsup.com/form/#file-upload
+	
+	FILE API
+		* security
+		inspect file in devtools
+		
+		preview:
+		
+			var reader = new FileReader();		
+			reader.onload = function(e) {
+			   e.target.result
+			}		
+			reader.readAsDataURL(input.files[0]);	
+
+
+		https://fengyuanchen.github.io/cropper/		
+		
+		
+	FormData
+		var fd = new FormData();    
+		fd.append( 'file', input.files[0] );
+
+		$.ajax({
+		  url: 'http://example.com/script.php',
+		  data: fd,
+		  processData: false,
+		  contentType: false,
+		  type: 'POST',
+		  success: function(data){
+			alert(data);
+		  }
+		});
+	
+			
+	Data
+		dom - dynamic 
+		$	- data
+	localStorage / sessionStorage
+	
+	Cors 
+		https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+		Simple request
+			https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Examples_of_access_control_scenarios
+		Jsonp
+		
+	encodeURI/decodeURI
+	

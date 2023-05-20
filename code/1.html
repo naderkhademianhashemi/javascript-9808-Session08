@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+            let j1_1 = jQuery.noConflict();
+
+
+    </script>
+    <style>
+        .big-img img {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+        
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                .<div class="card">
+                    <div class="big-img">
+
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Title</h4>
+                        <p class="card-text">Text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col img-items">
+                
+                <div class="btn-group" role="group" aria-label="">
+                    <a class="btn btn-primary" href="img/01.jpg">
+                        <img src="img/thumb_01.jpg" alt="">
+                    </a>
+                    <a class="btn btn-primary" href="img/02.jpg">
+                        <img src="img/thumb_02.jpg" alt="">
+                    </a>
+                    <a class="btn btn-primary" href="img/03.jpg">
+                        <img src="img/thumb_03.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (($) => {
+            $('.img-items a').click(e => {
+            e.preventDefault();
+            //$('.card-img-top').attr('src', e.currentTarget.getAttribute('href'))
+            $('.big-img').html('').append($(e.target).clone());
+            let newImg =  $('<img >');
+            newImg.attr('src', e.currentTarget.getAttribute('href'))
+            newImg.on('load', function(){
+                $('.big-img').html('').append(newImg)
+            })
+        })
+        })(j1_1)
+    </script>
+</body>
+</html>

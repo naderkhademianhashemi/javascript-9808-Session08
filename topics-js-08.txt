@@ -1,0 +1,256 @@
+sandspiel.club
+
+Emmet
+	link ->css
+
+Review
+	Ajax
+		load
+		get
+		ajax
+	Web Service
+		RPC
+			SOAP
+			WSDL
+		Rest		
+			OpenAPI / Swagger
+			RAML
+		GraphQL
+	
+	Send Data To Server
+		Form
+			Get
+				Query String
+			Post
+			
+	<form action="">
+        Name: <input type="text">
+        File: <input  type="file">
+        <button>Submit</button>
+    </form>		
+	$('button').click(e => {
+            e.preventDefault();
+            let fd = new FormData();
+            fd.append('Name', 'test');
+            fd.append('file', $('[type=file]')[0].files[0]);
+			//if multiple files are selected from input tag select the first file
+
+            $.ajax({
+                url: 'http://jquery.malsup.com/form/files.php',
+                type: 'post',
+                data: fd,
+                processData: false,
+		        contentType: false,
+            }).then(resp => console.log(resp))
+        })
+	Sample
+-------------------------------------------------
+	_.$()['a'][1] 
+	
+	Image preloading
+		clone
+		append
+		load
+		
+		Base64
+			mabnaye 64
+				52 a-z A-Z 
+				10 number
+				2 +/
+			mabnaye 2
+			    266 character
+			    not suitable -> http does not accept special characters
+				
+			
+			33%
+				html file size increases
+			
+			one request for multiple img files
+			
+			higher security
+			
+			encode - btoa("abc") YWJj  string -> base64 code
+			decode - atob("YWJj")
+	email-campain
+	CSRF - OWASP 
+		10 security risks 
+	
+	
+	//error handling
+	//	error event
+	//		broken-image
+	
+	
+	
+	problem
+		dependency with jQuery version 1
+		noConflict()
+			solve conflict jQuery version 2 and jQuery version 1
+		
+		let j1_1 = jQuery.noConflict();
+		(($) => {
+            $('.img-items a').click(e => {
+            e.preventDefault();
+            //$('.card-img-top').attr('src', e.currentTarget.getAttribute('href'))
+            $('.big-img').html('').append($(e.target).clone());
+            let newImg =  $('<img >');
+            newImg.attr('src', e.currentTarget.getAttribute('href'))
+            newImg.on('load', function(){
+                $('.big-img').html('').append(newImg)
+            })
+        })
+        })(j1_1)
+	
+	Modules
+		Dependency
+		Global variable 
+		Public
+		
+			IIFE
+				Local
+				Dependency Injection
+				Private
+	
+	Module Definition
+		IIFE
+			(() => {})()
+			An Immediately-invoked Function Expression (IIFE for friends) 
+			is a way to execute functions immediately, as soon as they are created. 
+			IIFEs are very useful because they don't pollute the global object,
+			and they are a simple way to isolate variables declarations.
+		AMD/UMD
+		CommonJS
+		Ecmascript Module
+			export,import
+		
+		
+	select2
+	
+	jQuery Troubleshooting	
+		not loading jQuery
+		wrong order
+		no css
+		wrong selector/dynamic data
+		$$('') -->QuerySelectorAll('')
+	
+	jQuery UI
+		interaction
+			draggable()
+			...
+		widgets
+			datepicker
+			...
+			
+	Bootstrap
+		modal
+		data-target
+		data-toggle
+		data-dismiss
+		pros/cons
+		
+		<button type="button" class="btn btn-primary" id="btnOpen" >
+			Launch demo modal
+		</button>
+		$('#btnOpen').click(e => {
+          $('#exampleModal').modal();
+		})
+		
+    
+	<button type="button" class="btn btn-primary" id="btnOpen"  data-toggle="modal" data-target="#exampleModal" >
+		Launch demo modal
+	</button>
+	
+	file upload
+		submit button default ->page reload
+		iframe
+		http://jquery.malsup.com/form/#file-upload
+	
+	FILE API
+		* security
+		inspect file in devtools
+		
+		preview:
+		
+			var reader = new FileReader();		
+			reader.onload = function(e) {
+			   e.target.result
+			}		
+			reader.readAsDataURL(input.files[0]);	
+
+
+		https://fengyuanchen.github.io/cropper/		
+		
+		
+	FormData
+		var fd = new FormData();    
+		fd.append( 'file', input.files[0] );
+
+		$.ajax({
+		  url: 'http://example.com/script.php',
+		  data: fd,
+		  processData: false,
+		  contentType: false,
+		  type: 'POST',
+		  success: function(data){
+			alert(data);
+		  }
+		});
+	
+		<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	</head>
+	<body>
+		<form action="">
+			Name: <input type="text">
+			File: <input  type="file">
+			<button>Submit</button>
+		</form>
+		<script>
+			$('button').click(e => {
+				e.preventDefault();
+				let fd = new FormData();
+				fd.append('Name', 'test');
+				fd.append('file', $('[type=file]')[0].files[0]);
+	
+				$.ajax({
+					url: 'http://jquery.malsup.com/form/files.php',
+					type: 'post',
+					data: fd,
+					processData: false,
+					contentType: false,
+				}).then(resp => console.log(resp))
+			})
+		</script>
+	</body>
+	</html>
+	
+			
+	Data
+		dom - dynamic 
+		$	- data
+	localStorage / sessionStorage
+	
+	CORS - Cross-Origin Resource Sharing
+			Cross-Origin Request
+			domains : siteName+port Number
+			Ajax to other domains different from URL
+			Error Cors is related to backend
+			but we can request Ajax with postman
+			browsers prevent CORS
+		https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+		A CORS preflight request 
+			is a CORS request that checks to see if the CORS protocol is understood 
+			and a server is aware using specific methods and headers.
+		Simple request
+			https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Examples_of_access_control_scenarios
+		Jsonp 
+				CORS solution
+		
+	encodeURI/decodeURI
+	

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.min.css">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/select2/dist/js/select2.full.min.js"></script>
+</head>
+<body>
+    <select>
+        <option>Tehran</option>
+        <option>Karaj</option>
+        <option>Shiraz</option>
+        <option>Tabriz</option>
+        <option>Kashan</option>
+    </select>
+    <script >
+        $(() => {
+            $('select').select2();
+        })
+    </script>
+</body>
+</html>

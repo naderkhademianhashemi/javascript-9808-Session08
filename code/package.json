@@ -1,0 +1,19 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alertifyjs": "^1.13.1",
+    "bootstrap": "^4.4.1",
+    "handlebars": "^4.6.0",
+    "jquery": "^3.4.1",
+    "select2": "^4.0.12"
+  }
+}

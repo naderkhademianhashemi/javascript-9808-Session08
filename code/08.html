@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <form action="">
+        Name: <input type="text">
+        File: <input  type="file">
+        <button>Submit</button>
+    </form>
+    <script>
+        $('button').click(e => {
+            e.preventDefault();
+            let fd = new FormData();
+            fd.append('Name', 'test');
+            fd.append('file', $('[type=file]')[0].files[0]);
+
+            $.ajax({
+                url: 'http://jquery.malsup.com/form/files.php',
+                type: 'post',
+                data: fd,
+                processData: false,
+		        contentType: false,
+            }).then(resp => console.log(resp))
+        })
+    </script>
+</body>
+</html>
